@@ -1,0 +1,699 @@
+from turtle import *
+from random import *
+from time import *
+def stop():
+	while True:
+		right(0)
+def part1question(sides):
+	return(int(input("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPick how many sides 3-22\n111 to randomize color order\nor 699 for reverse shape(broken)\nor 333 for other options\nor 999 for random\nor 101 for admin commands\n"))-3)
+def part2question(sides):
+	return(int(input("\n\n--------------------\nSpinny Stuff\n911 for star of david\n100 for confusing illusion spiral\n001 for fuzzy spiral\n781 for spinny line spiral\n700 for smooth spiral\n701 for deformed smooth spiral\n107 for el copado\n174 for de stifano\n311 for de jack\n987 for hmm line\n--------------------\nMixed Weird Shapes\n540 for square + triangle\n499 for 2side + triangle\n777 for tripent\n776 for squpent\n818 for line+pentagon\n345 for triangle+square+pentagon\n346 for triangle+square+hexagon\n573 for pentagon+septagon+triangle\n--------------------\nOther Stuff\n000 for a circle spiral\n090 for a square spiral\n666 for star\n585 for nani spiral\n467 for Sierpiński triangle(unfinished)\n444 for cube\n445 for cube wall\n446 for rubix cube\n303 for robbie original(hopefully) triangle design"))-3)
+sides=part1question(1111)
+#rainbow=["#B22222", "yellow", "#32CD32", "navy",  "dark orange","cyan", "dark slate blue"]
+rainbow=["#FF0000","#FF7F00","#FFFF00","#00FF00","#0000FF","#2E2B5F","#8B00FF"]
+
+if sides==111-3:
+	#Ask to shuffle colors
+	shuffle(rainbow)
+	print("registered shuffle")
+	sleep(1)
+	sides=part1question(1111)
+if sides==333-3:
+	#The other options section
+	print("registered options sections")
+	sleep(1)
+	sides=part2question(1111)
+	print(sides+3)
+if sides==699-3:
+	#reverse
+	print("registered reverse")
+	sleep(1)
+	sides=part1question(1111)
+	realreversecheck=True
+if sides==111-3:
+	#Ask to shuffle colors again
+	print("registered shuffle")
+	sleep(1)
+	shuffle(rainbow)
+	sides=part1question(1111)
+	print("You can no longer shuffle colors")
+if sides==333-3:
+	#The other options section again
+	print("registered options sections")
+	sleep(1)
+	sides=part2question(1111)
+	print(sides+3)
+def realreverse(number,increase, realreversecheck, firstime):
+	if realreversecheck==True:
+		number+=66
+		return(number-increase)
+	else:
+		return(number+increase)
+def mayberReverse(numero,reversecheck):
+	#forget about this
+	reversecheck=False
+	if reversecheck==True:
+		return(numero)
+	else:
+		return(numero)
+reversecheck=False
+speed(0)
+bgcolor("black")
+def end():
+	color("white")
+	while True:
+		right(0)
+angles=[120,90,72,60,51,45,40,36,33,30,28,26,24,180-157.5,180-159,180-160,180-161,180-162,180-163,180-164]
+a=0
+counter=0
+if sides==911-3:
+	#star of david i think
+	pensize(11)
+	firstime=True
+	while True:
+		if a ==7:
+			a=0	
+		pencolor(rainbow[a])	
+		a+=1
+		forward(50, counter, realreversecheck,True)
+		right(108.1,reversecheck)
+		counter+=1
+		firsttime=False
+elif sides==101-3:
+	#dev commands
+	options=int(input("\nWhat do you want to do:\n1 for Check Colors\n2 for boredom relief\n"))
+	if options==1:
+		pensize(10)
+		check=0
+		for i in range(7):
+			color(rainbow[check])
+			check+=1
+			forward(100)
+			right(90)
+			color("black")
+			forward(30)
+			right(90)
+			forward(100)
+			right(180)
+		end()
+	elif options==2:
+		pensize(3)
+		color("white")
+		x=0
+		while True:
+			circle(x)
+			x=x*1.5
+elif sides==444-3:
+	#3d cube  
+	x=numinput("Size", "How big do you want the cube 1-5:")*50
+	def y(): 
+	   forward(x) 
+	# right side 
+	color(rainbow[3]) 
+	begin_fill() 
+	left(45) 
+	y() 
+	right(135) 
+	y() 
+	right(45) 
+	y() 
+	right(135) 
+	y() 
+	end_fill() 
+	# left side 
+	color(rainbow[4])
+	begin_fill() 
+	left(45) 
+	y() 
+	left(135) 
+	y() 
+	left(45) 
+	y() 
+	left(135) 
+	y() 
+	end_fill() 
+	# top side 
+	color(rainbow[0])
+	begin_fill() 
+	left(45) 
+	y() 
+	right(90) 
+	y() 
+	right(90) 
+	y() 
+	right(90) 
+	y() 
+	color(rainbow[0])
+	right(135) 
+	y() 
+	end_fill()
+	right(90)
+	end()
+elif sides==445-3:
+	#3d cube wall 
+	x=numinput("Size", "How big do you want the cube 1-5:")*30
+	
+	def y(): 
+	   forward(x) 
+	# right side 
+	def towerofgod():
+		for i in range(3):
+			color(rainbow[3]) 
+			begin_fill() 
+			left(45) 
+			y() 
+			right(135) 
+			y() 
+			right(45) 
+			y() 
+			right(135) 
+			y() 
+			end_fill() 
+			# left side 
+			color(rainbow[4])
+			begin_fill() 
+			left(45) 
+			y() 
+			left(135) 
+			y() 
+			left(45) 
+			y() 
+			left(135) 
+			y() 
+			end_fill() 
+			# top side 
+			color(rainbow[0])
+			begin_fill() 
+			left(45) 
+			y() 
+			right(90) 
+			y() 
+			right(90) 
+			y() 
+			right(90) 
+			y() 
+			color(rainbow[0])
+			right(135) 
+			y() 
+			end_fill()
+			right(90)
+
+	towerofgod()
+	right(90)
+	color(rainbow[0])
+	forward(x)
+	pencolor("blue")
+	forward(2.75*x)
+	left(90)
+	forward(0.73*x)
+	towerofgod()
+
+	right(90)
+	color(rainbow[0])
+	forward(x)
+	pencolor("blue")
+	forward(2.75*x)
+	left(90)
+	forward(0.72*x)
+	towerofgod()
+	end()
+elif sides==446-3:
+	#rubix cube
+	color("black")
+	x=numinput("Size of Rubix Cube", "How big do you want the cube 1-5:")*65
+	def y(): 
+	   forward(x) 
+	# right side 
+	right(90)
+	forward(x/4)
+	left(90)
+	color(rainbow[3]) 
+	begin_fill() 
+	left(45) 
+	y() 
+	right(135) 
+	y() 
+	right(45) 
+	y() 
+	right(135) 
+	y() 
+	end_fill() 
+	# left side 
+	color(rainbow[4])
+	begin_fill() 
+	left(45) 
+	y() 
+	left(135) 
+	y() 
+	left(45) 
+	y() 
+	left(135) 
+	y() 
+	end_fill() 
+	# top side 
+	color(rainbow[0])
+	begin_fill() 
+	left(45) 
+	y() 
+	right(90) 
+	y() 
+	right(90) 
+	y() 
+	right(90) 
+	y() 
+	right(135) 
+	y() 
+	end_fill()
+	right(90)
+	left(45)
+	forward(x/3.421)
+	left(90)
+	forward(x/3.4)
+	color("white")
+	left(90)
+	y()
+	left(45)
+	y()
+	left(45)
+	forward(x/3)
+	left(135)
+	y()
+	right(45)
+	y()
+	right(180)
+	y()
+	left(45)
+	y()
+	left(45)
+	forward(x/3)
+	left(135)
+	y()
+	right(45)
+	y()
+	right(180)
+	y()
+	left(45)
+	y()
+	left(45)
+	forward(x/3)
+	left(135)
+	y()
+	right(45)
+	y()
+	right(135)
+	forward(x/3)
+	right(45)
+	y()
+	right(90)
+	y()
+	left(135)
+	forward(x/3)
+	left(45)
+	y()
+	left(90)
+	y()
+	right(135)
+	forward(x/3)
+	right(45)
+	forward(x/3)
+	right(135)
+	y()
+	left(45)
+	y()
+	left(90)
+	forward(x/3)
+	left(90)
+	y()
+	right(45)
+	y()
+	right(45)
+	forward(x/3)
+	right(135)
+	y()
+	right(90)
+	size=0
+	while True:
+		color(rainbow[3]) 
+		left(45) 
+		y() 
+		right(135) 
+		y() 
+		right(45) 
+		y() 
+		right(135) 
+		y() 
+		
+		# left side 
+		color(rainbow[4])
+		
+		left(45) 
+		y() 
+		left(135) 
+		y() 
+		left(45) 
+		y() 
+		left(135) 
+		y() 
+		
+		# top side 
+		color(rainbow[0])
+		
+		left(45) 
+		y() 
+		right(90) 
+		y() 
+		right(90) 
+		y() 
+		right(90) 
+		y() 
+		color(rainbow[0])
+		right(135+90)
+		if size>7:
+			pensize(size)
+		else:
+			pensize(0.1)
+		reee=(x/65)*0.35
+		size+=1*reee
+elif sides==345-3:
+	#tri+squ+pent
+	ugh=1
+	pensize(11)
+	while True:
+		if a ==7:
+			a=0
+		pencolor(rainbow[a])
+		a+=1
+		if ugh%3==0:
+			forward(50+counter*0.2)
+			right(mayberReverse(72))
+		if ugh%2==0 and ugh%3!=0:
+			forward(50+counter*0.2)
+			right(mayberReverse(90))
+		else:
+			forward(50+counter*0.1)
+			right(mayberReverse(120,reversecheck))
+		ugh+=1
+		counter+=1
+elif sides==346-3:
+	#tri+squ+hexagon
+	ugh=1
+	pensize(11)
+	while True:
+		if a ==7:
+			a=0
+		pencolor(rainbow[a])
+		a+=1
+		if ugh%3==0:
+			forward(50+counter*0.2)
+			right(mayberReverse(60,reversecheck))
+		if ugh%2==0 and ugh%3!=0:
+			forward(50+counter*0.2)
+			right(mayberReverse(90,reversecheck))
+		else:
+			forward(50+counter*0.1)
+			right(mayberReverse(120,reversecheck))
+		ugh+=1
+		counter+=1
+elif sides==573-3:
+	#pentagon+septagon+triangle
+	ugh=1
+	pensize(11)
+	while True:
+		if a ==7:
+			a=0
+		pencolor(rainbow[a])
+		a+=1
+		if ugh%3==0:
+			forward(50+counter*0.2)
+			right(mayberReverse(72,reversecheck))
+		if ugh%2==0 and ugh%3!=0:
+			forward(50+counter*0.2)
+			right(mayberReverse(51,reversecheck))
+		else:
+			forward(50+counter*0.1)
+			right(mayberReverse(60,reversecheck))
+		ugh+=1
+		counter+=1
+elif sides==467-3:
+	#unfinished triangle thign
+	speed("slowest")
+	advance=numinput("Size", "How big do you want the triangle? 1-5:")*50
+	bgcolor('#f8f8ff')
+	pencolor('#f8f8ff')
+	pensize(0.001)
+	fillcolor('#000000')
+	right(90)
+	forward(advance)
+	right(180)
+	pencolor('#000000')
+	begin_fill()
+	for i in range(3):
+		forward(advance)
+		right(120)
+	end_fill()
+	advance=advance/2
+	fillcolor('#f8f8ff')
+	begin_fill()
+	forward(advance)
+	right(60)
+	forward(advance)
+	right(120)
+	forward(advance)
+	right(120)
+	forward(advance)	
+	end_fill()
+	advance=advance/2	
+	while True:
+		if a ==7:
+			a=0
+		pencolor(rainbow[a])
+		a+=1
+		if ugh%2:
+			forward(50+counter*0.2)
+			right(120)
+		else:
+			forward(50+counter*0.1)
+			right(mayberReverse(72+counter,reversecheck))
+		ugh+=1
+		counter+=1
+elif sides==776-3:
+	#square and pentagon
+	ugh=1
+	pensize(11)
+	while True:
+		if a ==7:
+			a=0
+		pencolor(rainbow[a])
+		a+=1
+		if ugh%2:
+			forward(50+counter*0.2)
+			right(mayberReverse(90,reversecheck))
+		else:
+			forward(50+counter*0.1)
+			right(mayberReverse(72+counter,reversecheck))
+		ugh+=1
+		counter+=1
+elif sides==540-3:
+	pensize(11)
+	while True:
+		if a ==7:
+			a=0
+		pencolor(rainbow[a])
+		a+=1
+		forward(50+counter)
+		right(mayberReverse(90,reversecheck))
+		forward(50)
+		right(mayberReverse(60,reversecheck))
+		counter+=1
+elif sides==499-3:
+	pensize(11)
+	while True:
+		if a ==7:
+			a=0
+		pencolor(rainbow[a])
+		a+=1
+		forward(50+counter)
+		right(mayberReverse(60,reversecheck))
+		forward(50+counter*0.05)
+		right(mayberReverse(180,reversecheck))
+		counter+=1
+
+elif sides==987-3:
+	pensize(9+158/50)
+	while True:
+		if a ==7:
+			a=0
+		pencolor(rainbow[a])
+		a+=1
+		forward(50+counter)
+		right(mayberReverse(158,reversecheck))
+		counter+=1
+
+elif sides==311-3:
+	pensize(9+215/50)
+	while True:
+		if a ==7:
+			a=0
+		pencolor(rainbow[a])
+		a+=1
+		forward(50+counter)
+		right(mayberReverse(215,reversecheck))
+		counter+=1
+
+elif sides==174-3:
+	pensize(9+280/50)
+	while True:
+		if a ==7:
+			a=0
+		pencolor(rainbow[a])
+		a+=1
+		forward(50+counter)
+		right(mayberReverse(280,reversecheck))
+		counter+=1
+
+elif sides==107-3:
+	pensize(9+272/50)
+	while True:
+		if a ==7:
+			a=0
+		pencolor(rainbow[a])
+		a+=1
+		forward(50+counter)
+		right(mayberReverse(272,reversecheck))
+		counter+=1
+
+elif sides==87:
+	pensize(2)
+	while True:
+		if a ==7:
+			a=0
+		pencolor(rainbow[a])
+		a+=1
+		forward(30+counter)
+		right(mayberReverse(90,reversecheck))
+		counter+=1
+
+elif sides==0-3:
+	pensize(10)
+	while True:
+		if a ==7:
+			a=0
+		pencolor(rainbow[a])
+		a+=1
+		forward(1+counter*0.005)
+		right(mayberReverse(1,reversecheck))
+		counter+=1
+
+elif sides==701-3:
+	pensize(9+263/50)
+	while True:
+		if a ==7:
+			a=0
+		pencolor(rainbow[a])
+		a+=1
+		forward(50+counter)
+		right(mayberReverse(263,reversecheck))
+		counter+=1
+elif sides==700-3:
+
+	pensize(9+259/50)
+	while True:
+		if a ==7:
+			a=0
+		pencolor(rainbow[a])
+		a+=1
+		forward(50+counter)
+		right(mayberReverse(260,reversecheck))
+		counter+=1
+elif sides==666-3:
+	pensize(9+144/50)
+	while True:
+		if a ==7:
+			a=0
+		pencolor(rainbow[a])
+		a+=1
+		forward(50+counter)
+		right(mayberReverse(144,reversecheck))
+		counter+=1
+elif sides==781-3:
+	pensize(5)
+	while True:
+		if a ==7:
+			a=0
+		pencolor(rainbow[a])
+		a+=1
+		forward(50+counter)
+		right(mayberReverse(180.8,reversecheck))
+		counter+=1
+
+elif sides==999-3:
+	#Random
+	boi=randint(121,290)
+	print(boi)
+	pensize(9+boi/50)
+	while True:
+		if a ==7:
+			a=0
+		pencolor(rainbow[a])
+		a+=1
+		forward(50+counter)
+		right(mayberReverse(boi,reversecheck))
+		counter+=1
+elif sides==-2:
+	pensize(9+129/50)
+	while True:
+		if a==7:
+			a=0
+		pencolor(rainbow[a])
+		a+=1
+		forward(50+counter)
+		right(mayberReverse(129,reversecheck))
+		counter+=1
+elif sides==97:
+	pensize(16)
+	while True:
+		if a ==7:
+			a=0
+		pencolor(rainbow[a])
+		a+=1
+		forward(50+counter)
+		right(mayberReverse(245,reversecheck))
+		counter+=1
+elif sides==565:
+	pass
+elif sides==303-3:
+	speed("fast")
+	colorz=0
+	pensize(1)
+	right(90)
+	forward(500	)
+	left(90)
+	right(120)
+	advance=1000
+	for i in range(12):
+		if colorz==7:
+			colorz=0
+		color(rainbow[colorz])
+		colorz+=1
+		begin_fill()
+		for i in range(3):
+			right(120)
+			forward(advance)
+		end_fill()
+		right(180)
+		advance=advance/2
+		forward(advance)
+		left(240)
+	color(rainbow[0])
+	write("Lol There Is No Point You Eyes are dumb")
+	end()
+else:
+	pensize(10+sides/1.4)
+	while True:
+		if a ==7:
+			a=0
+		pencolor(rainbow[a])
+		a+=1
+		forward(50+counter*0.3)
+		right(mayberReverse(angles[sides]+0.2,reversecheck))
+		counter+=1
